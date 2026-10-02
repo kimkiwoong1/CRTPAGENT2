@@ -1,0 +1,52 @@
+{
+  "meta": {"type": "users", "count": 4, "version": 5},
+  "data": [
+    {
+      "ObjectIdentifier": "S-1-5-21-1111111111-2222222222-3333333333-1105",
+      "Properties": {
+        "name": "SQLSVC@DOLLARCORP.MONEYCORP.LOCAL",
+        "samaccountname": "sqlsvc",
+        "enabled": true,
+        "hasspn": true,
+        "serviceprincipalnames": ["MSSQLSvc/dcorp-mssql.dollarcorp.moneycorp.local:1433"],
+        "admincount": true,
+        "pwdlastset": 1600000000,
+        "description": ""
+      },
+      "Aces": []
+    },
+    {
+      "ObjectIdentifier": "S-1-5-21-1111111111-2222222222-3333333333-1106",
+      "Properties": {
+        "name": "SVCADMIN@DOLLARCORP.MONEYCORP.LOCAL",
+        "samaccountname": "svcadmin",
+        "enabled": true,
+        "dontreqpreauth": true,
+        "admincount": true
+      },
+      "Aces": []
+    },
+    {
+      "ObjectIdentifier": "S-1-5-21-1111111111-2222222222-3333333333-1107",
+      "Properties": {
+        "name": "WEBSVC@DOLLARCORP.MONEYCORP.LOCAL",
+        "samaccountname": "websvc",
+        "enabled": true,
+        "description": "Temp account pass: Welcome1!"
+      },
+      "AllowedToDelegate": ["CIFS/dcorp-dc.dollarcorp.moneycorp.local"],
+      "Aces": []
+    },
+    {
+      "ObjectIdentifier": "S-1-5-21-1111111111-2222222222-3333333333-1108",
+      "Properties": {
+        "name": "STUDENT@DOLLARCORP.MONEYCORP.LOCAL",
+        "samaccountname": "student",
+        "enabled": true
+      },
+      "Aces": [
+        {"PrincipalSID": "S-1-5-21-1111111111-2222222222-3333333333-1108", "PrincipalType": "User", "RightName": "GenericAll", "IsInherited": false}
+      ]
+    }
+  ]
+}

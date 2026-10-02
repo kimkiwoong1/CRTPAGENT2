@@ -1,0 +1,16 @@
+{
+  "meta": {"type": "domains", "count": 1, "version": 5},
+  "data": [
+    {
+      "ObjectIdentifier": "S-1-5-21-1111111111-2222222222-3333333333",
+      "Properties": {"name": "DOLLARCORP.MONEYCORP.LOCAL", "functionallevel": "2016"},
+      "Trusts": [
+        {"TargetDomainName": "MONEYCORP.LOCAL", "TargetDomainSid": "S-1-5-21-4444444444-5555555555-6666666666", "TrustDirection": "Inbound", "TrustType": "ParentChild", "IsTransitive": true}
+      ],
+      "Aces": [
+        {"PrincipalSID": "S-1-5-21-1111111111-2222222222-3333333333-1105", "PrincipalType": "User", "RightName": "GetChanges", "IsInherited": false},
+        {"PrincipalSID": "S-1-5-21-1111111111-2222222222-3333333333-1105", "PrincipalType": "User", "RightName": "GetChangesAll", "IsInherited": false}
+      ]
+    }
+  ]
+}
